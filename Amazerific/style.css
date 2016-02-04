@@ -1,0 +1,30 @@
+body{
+	background: #f9e933;
+}
+
+header, main, footer {
+	min-width: 855px;
+}
+
+header .container, main .container, footer . container{
+	max-width: 855px;
+}
+
+header{
+	background: white;
+}
+
+main{
+	background: #ffffff;
+}
+
+header h1{
+	float: left;
+	width: 570px;
+}
+
+header nav{
+	float: right;
+	width: 285px;
+}
+
