@@ -1,32 +1,28 @@
 var main = function (){
 	"use strict";
 	
+	var makeTabActive = function (tabNumber)
+	{
+		//construct the selector from the tabNumber
+		var tabSelector = ".tabs a:nth-child(" + tabNumber + ") span";
+			$(".tabs span").removeClass("active");
+			$(tabSelector).addClass("active");
+			$("main .content").empty();
+	};	
 	$(".tabs a:nth-child(1)").on("click", function(){
-		//make all the tabs inactive
-		$(".tabs span").removeClass("active");
-		
-		//make the first tab active
-		$(".tabs a:nth-child(1) span").addClass("active");
-		
-		//empty the main content so we can recreate italics
-		$("main .content").empty();
-		
-		//return false so we don't follow the link
+		makeTabActive(1);
 		return false;
 	});
 	
 	$(".tabs a:nth-child(2)").on("click", function(){
-		$(".tabs span").removeClass("active");
-		$(".tabs a:nth-child(2) span").addClass("active");
-		$("main .content").empty();
+		makeTabActive(2);
 		return false;
 	});
 	
 	$(".tabs a:nth-child(3)").on("click", function(){
-
-		$(".tabs span").removeClass("active");
-		$(".tabs a:nth-child(3) span").addClass("active");
-		$("main .content").empty();
+		makeTabActive(3);
 		return false;
 	});
+	
+	
 }
