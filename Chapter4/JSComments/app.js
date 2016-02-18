@@ -15,7 +15,9 @@ var main = function(){
 		if (event.keyCode === 13){
 			if($(".comment-input input").val() !== ""){
 				var $new_comment = $("<p>").text($(".comment-input input").val());
+				$new_comment.hide();
 				$(".comments").append($new_comment);
+				$new_comment.fadeIn();
 				$(".comment-input input").val("");
 			}
 		}
