@@ -9,7 +9,11 @@ var main = function(){
 	{
 		flickrResponse.items.forEach(function(photo)
 		{
-			console.log(photo.media.m);
+			var $img = $("<img>");
+			
+			$img.attr("src", photo.media.m);
+			
+			$("main .photos").append($img);
 		});
 	});
 };
