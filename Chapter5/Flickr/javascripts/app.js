@@ -14,6 +14,7 @@ var main = function(){
 			$img.attr("src", photo.media.m);
 			
 			$("main .photos").append($img);
+			$img.fadeIn();
 		});
 	});
 };
