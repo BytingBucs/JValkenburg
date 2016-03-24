@@ -30,6 +30,47 @@ var main = function (toDoObjects){
 				
 			} else if ($element.parent().is(":nth-child(3)")){
 				console.log("THIRD TAB CLICKED!");
+				
+				var organizedByTag =[
+					{
+						"name": "shopping",
+						"toDos": ["Get groceries"]
+					},
+					{
+						"name": "chores",
+						"toDos": ["Get groceries", "Take Gracie to the park"]
+					},
+					{
+						"name": "writing",
+						"toDos": ["Make up some new ToDos", "Finish writing this book"]
+					},
+					{
+						"name": "work",
+						"toDos": ["make up some new ToDos", "Prep for Monday's class", 
+								"Answer emails", "Finish writing this book"]
+					},
+					{
+						"name": "teaching",
+						"toDos": ["Prep for Monday's class"]
+					},
+					{
+						"name": "pets",
+						"toDos": ["Take Gracie to the park"]
+					}
+				]
+				
+				organizedByTag.forEach(function(tag){
+						var $tagName = $("<h3>").text(tag.name),
+							$content = $("<ul>");
+						
+						tag.toDos.forEach(function(description){
+							var $li = $("<li>").text(description);
+							$content.append($li);
+						});
+						
+						$("main .content").append($tagName);
+						$("main .content").append($content);
+				});
 			} else if ($element.parent().is(":nth-child(4)")){
 				$input = $("<input>"),
                 $button = $("<button>").text("+");
