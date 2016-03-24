@@ -1,10 +1,9 @@
 var main = function (toDoObjects){
 	"use strict";
 
-	var toDos = ["finish writing this book",
-	"take gracie to the park"];/*toDoObjects.map(function(toDo){
+	var toDos = toDoObjects.map(function(toDo){
 		return toDo.description;
-	});*/
+	});
 		
 	$(".tabs a span").toArray().forEach(function(element){
 		var $element = $(element);
