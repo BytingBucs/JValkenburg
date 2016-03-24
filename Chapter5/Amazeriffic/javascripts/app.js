@@ -1,4 +1,4 @@
-var main = function (){
+var main = function (toDoObjects){
 	"use strict";
 
 	var toDos = ["finish writing this book",
@@ -48,4 +48,8 @@ var main = function (){
 		});
 	});
 };
-$(document).ready(main);
+$(document).ready(function(){
+	$.getJSON("todos.json", function(toDoObjects){
+		main(toDoObjects);
+	});
+});
