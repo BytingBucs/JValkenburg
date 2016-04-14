@@ -40,11 +40,16 @@ var express = require("express"),
 	app.use(express.urlencoded());
 	
 	app.post("/todos", function (req, res){
-		var newToDo = req.body;
+		var newToDo = new ToDo({"description":req.body.discription,
+								"tags":req.body.tags});
 		
-		console.log(newToDo);
-		
-		toDos.push(newToDo);
-		
-		res.json({"message":"You posted to the server!"});
+		newToDo.save(function (err, result){
+			console.log(result);
+			if(err !== null){
+				console.log(err);
+				res.json(err);
+			} else{
+				res.json(result);
+			}
+		});
 	});
