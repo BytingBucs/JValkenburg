@@ -11,7 +11,7 @@ var main = function(toDoObjects){
 		"name":"Newest ",
 	
 		//functionality
-		"content": function(callback){
+		"content": function(){
 			$.get("todos.json", function(toDoObjects){
 				var $content;
 			
@@ -42,37 +42,39 @@ var main = function(toDoObjects){
 	tabs.push({
 		"name":"Tags ",
 		"content": function(){
-			var tags = [];
-					
-				toDoObjects.forEach(function (toDo){
-					toDo.tags.forEach(function (tag){
-						if(tags.indexOf(tag) === -1) {
-							tags.push(tag);
-						}
-					});
-				});
-					
-				var tagObjects = tags.map(function (tag) {
-					var toDosWithTag = [];
-					toDoObjects.forEach(function(toDo){
-						if (toDo.tags.indexOf(tag) !== -1){
-							toDosWithTag.push(toDo.description);
-						}
-					});
-					return {"name": tag, "toDos": toDosWithTag };
-				});				
-				tagObjects.forEach(function(tag){
-					var $tagName = $("<h3>").text(tag.name),
-						$content = $("<ul>");
+			$.get("todos.json", function(toDoObjects){
+				var tags = [];
 						
-					tag.toDos.forEach(function(description){
-						var $li = $("<li>").text(description);
-						$content.append($li);
+					toDoObjects.forEach(function (toDo){
+						toDo.tags.forEach(function (tag){
+							if(tags.indexOf(tag) === -1) {
+								tags.push(tag);
+							}
+						});
 					});
 						
-					$("main .content").append($tagName);
-					$("main .content").append($content);
-				});
+					var tagObjects = tags.map(function (tag) {
+						var toDosWithTag = [];
+						toDoObjects.forEach(function(toDo){
+							if (toDo.tags.indexOf(tag) !== -1){
+								toDosWithTag.push(toDo.description);
+							}
+						});
+						return {"name": tag, "toDos": toDosWithTag };
+					});				
+					tagObjects.forEach(function(tag){
+						var $tagName = $("<h3>").text(tag.name),
+							$content = $("<ul>");
+							
+						tag.toDos.forEach(function(description){
+							var $li = $("<li>").text(description);
+							$content.append($li);
+						});
+							
+						$("main .content").append($tagName);
+						$("main .content").append($content);
+					});
+			});
 		}
 	});
 	
