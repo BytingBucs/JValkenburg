@@ -81,6 +81,7 @@ var main = function(toDoObjects){
 		tabs.push({
 		"name":"Add",
 		"content":function(){
+			$.get("todos.json", function(toDoObjects){
 			var $input = $("<input>").addClass("description"),
 					$inputLabel = $("<p>").text("Description: "),
 					$tagInput = $("<input>").addClass("tags"),
@@ -89,23 +90,17 @@ var main = function(toDoObjects){
 
                 $button.on("click", function () {
                     var description = $input.val(),
-						tags = $tagInput.val().split(",");
-						
-					var	newToDo = {"description":description, "tags":tags};
+						tags = $tagInput.val().split(","),
+						newToDo = {"description":description, "tags":tags};
 					
-					toDoObjects.push({"description":description, "tags":tags});
 					
 					$.post("todos", newToDo, function(result){
-						console.log(result);
-						toDoObjects.push(newToDo);
+						$input.val("");
+						$tagInput.val("");
+						
+						$(".tabs a:first span").trigger("click");
 					});
 					
-					toDos = toDoObjects.map(function (toDo){
-						return toDo.description;
-					});
-				
-					$input.val("");
-					$tagInput.val("");
 				});
 				$content = $("<div>").append($inputLabel)
 										.append($input)
@@ -114,6 +109,7 @@ var main = function(toDoObjects){
 										.append($button);
 				$("main .content").append($content);
 				return $content;
+			});
 		}
 	});
 	
