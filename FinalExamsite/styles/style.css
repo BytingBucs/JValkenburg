@@ -1,0 +1,21 @@
+table{
+	border-right-color: black;
+	border-bottom-color: black;
+	border-style: solid;
+}
+table thead{
+	background:darkgrey;
+	color:white;
+
+}
+th{
+	border-style:solid;
+	border-color:darkgrey;
+}
+
+table td{
+	margin:0px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
