@@ -1,0 +1,27 @@
+[
+	{ 
+		"description" : "Sliced ham",
+		"tags"  : [ "deli", "meats" ],
+		"stores":["Walmart", "Publix", "Whole Foods"]
+	},
+	{ 
+		"description" : "potato chips",
+		"tags"  : [ "Snacks" ],
+		"stores":["Walmart", "Publix"]
+	},
+	{
+		"description" : "Razor cartridges",
+		"tags"  : [ "health", "grooming" ],
+		"stores":["Walmart", "CVS","Walgreens"]
+	},
+	{ 
+		"description" : "Rewriteable DVD's",
+		"tags"  : [ "electronics" ],
+		"stores":["Walmart", "Office Depot", "Staples"]
+	},
+	{ 
+		"description"  : "Phillips Head Screwdriver",
+		"tags"  : [ "hardware", "tools" ],
+		"stores":["Home Depot","Lowes",""]
+	}
+]

@@ -1,0 +1,32 @@
+[
+	{ 
+		"description" : "Get groceries",
+		"tags"  : [ "shopping", "chores" ],
+		"stores":["Walmart"]
+	},
+	{ 
+		"description" : "Make up some new ToDos",
+		"tags"  : [ "writing", "work" ],
+		"stores":[]
+	},
+	{
+		"description" : "Prep for Monday's class",
+		"tags"  : [ "work", "teaching" ],
+		"stores":[]
+	},
+	{ 
+		"description" : "Answer emails",
+		"tags"  : [ "work" ],
+		"stores":[]
+	},
+	{ 
+		"description"  : "Take Gracie to the park",
+		"tags"  : [ "chores", "pets" ],
+		"stores":[]
+	},
+	{ 
+		"description" : "Finish writing this book",
+		"tags"  : [ "writing", "work" ],
+		"stores":[]
+	}
+]
