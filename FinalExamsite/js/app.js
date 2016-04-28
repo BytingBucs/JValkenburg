@@ -36,7 +36,7 @@ var main = function(){
 					+"</td><td>"+ contact.JobTitle
 					+"</td><td>"+ contact.EmailAddress
 					+"</td><td>"+ contact.BusinessPhone
-					+"</td></tr><td>&nbsp;</td>";
+					+"</td><td>&nbsp;</td></tr>";
 		});
 		$("#tblContacts tbody").append($rows);
 	});
